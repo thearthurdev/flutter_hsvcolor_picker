@@ -437,7 +437,7 @@ class _RGBPickerState extends State<RGBPicker> {
               child: new Text(title,
                   style: Theme.of(context)
                       .textTheme
-                      .title
+                      .headline6
                       .copyWith(fontSize: 18))),
           new Expanded(
               child: new Align(
@@ -445,7 +445,7 @@ class _RGBPickerState extends State<RGBPicker> {
                   child: new Text(text,
                       style: Theme.of(context)
                           .textTheme
-                          .headline
+                          .headline6
                           .copyWith(fontSize: 18))))
         ]));
   }
@@ -550,7 +550,8 @@ class _HSVPickerState extends State<HSVPicker> {
         child: new Row(children: <Widget>[
           new Opacity(
               opacity: 0.5,
-              child: new Text(title, style: Theme.of(context).textTheme.title)),
+              child: new Text(title,
+                  style: Theme.of(context).textTheme.headline6)),
           new Expanded(
               child: new Align(
                   alignment: Alignment.centerRight,
@@ -558,7 +559,7 @@ class _HSVPickerState extends State<HSVPicker> {
                     text,
                     style: Theme.of(context)
                         .textTheme
-                        .headline
+                        .headline6
                         .copyWith(fontSize: 18),
                   )))
         ]));
@@ -1187,7 +1188,7 @@ class _HexPickerState extends State<HexPicker> {
 
     try {
       return Hex.intToColor(Hex.stringToInt(hex));
-    } catch (Exception) {
+    } catch (exception) {
       return super.widget.color;
     }
   }
@@ -1200,13 +1201,13 @@ class _HexPickerState extends State<HexPicker> {
           padding: const EdgeInsets.symmetric(horizontal: 4),
           child: new Text(
             "#",
-            style: Theme.of(context).textTheme.title.copyWith(fontSize: 18),
+            style: Theme.of(context).textTheme.headline6.copyWith(fontSize: 18),
           )),
 
       //TextField
       new Expanded(
           child: new TextField(
-        style: Theme.of(context).textTheme.headline.copyWith(fontSize: 20),
+        style: Theme.of(context).textTheme.headline6.copyWith(fontSize: 20),
         focusNode: new FocusNode()..addListener(() {}),
         controller: super.widget.controller,
         onSubmitted: this.textOnSubmitted,
@@ -1253,7 +1254,8 @@ class _AlphaPickerState extends State<AlphaPicker> {
         child: new Row(children: <Widget>[
           new Opacity(
               opacity: 0.5,
-              child: new Text(title, style: Theme.of(context).textTheme.title)),
+              child: new Text(title,
+                  style: Theme.of(context).textTheme.headline6)),
           new Expanded(
               child: new Align(
                   alignment: Alignment.centerRight,
@@ -1261,7 +1263,7 @@ class _AlphaPickerState extends State<AlphaPicker> {
                     text,
                     style: Theme.of(context)
                         .textTheme
-                        .headline
+                        .headline6
                         .copyWith(fontSize: 18),
                   )))
         ]));
@@ -1891,9 +1893,12 @@ class ColorPickerState extends State<ColorPicker> {
             child: new Text(
               item.name,
               style: this._index == item.index
-                  ? Theme.of(context).textTheme.headline.copyWith(
-                      fontSize: 18, color: Theme.of(context).accentColor)
-                  : Theme.of(context).textTheme.headline.copyWith(fontSize: 18),
+                  ? Theme.of(context).textTheme.headline6.copyWith(
+                      fontSize: 18, color: Theme.of(context).colorScheme.secondary)
+                  : Theme.of(context)
+                      .textTheme
+                      .headline6
+                      .copyWith(fontSize: 18),
             )));
   }
 
@@ -1967,7 +1972,7 @@ class ColorPickerState extends State<ColorPicker> {
             iconSize: 32.0,
             isExpanded: true,
             isDense: true,
-            style: Theme.of(context).textTheme.headline.copyWith(fontSize: 20),
+            style: Theme.of(context).textTheme.headline6.copyWith(fontSize: 20),
             value: this._pickers[this._index],
             onChanged: (value) =>
                 super.setState(() => this._pickerOnChanged(value)),
