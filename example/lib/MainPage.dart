@@ -117,7 +117,7 @@ class MainPageState extends State<MainPage> {
         title: new Center(
             child: new Text("HSV Color",
                 textAlign: TextAlign.center,
-                style: this.theme.textTheme.headline6)),
+                style: this.theme.textTheme.headline)),
 
         //Left
         leading: new IconButton(
@@ -152,7 +152,7 @@ class MainPageState extends State<MainPage> {
 
   Widget buildDrawerHeader() {
     return new DrawerHeader(
-        decoration: new BoxDecoration(color: this.theme.colorScheme.secondary),
+        decoration: new BoxDecoration(color: this.theme.accentColor),
         child: new Stack(children: <Widget>[
           //Avatar
           new Align(
@@ -174,14 +174,10 @@ class MainPageState extends State<MainPage> {
           //Button
           new Align(
               alignment: Alignment.bottomRight,
-              child: new ElevatedButton(
+              child: new RaisedButton(
                   onPressed: this.setTheme,
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                        this.theme.colorScheme.secondary),
-                    shape: MaterialStateProperty.all<OutlinedBorder>(
-                        StadiumBorder()),
-                  ),
+                  color: this.theme.accentColor,
+                  shape: new StadiumBorder(),
                   child: new Text(
                       this.theme.brightness == Brightness.dark
                           ? "Dark"
