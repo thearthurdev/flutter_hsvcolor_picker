@@ -2,60 +2,31 @@
 
 A HSV color picker for your flutter app.
 RGB HSV Wheel Hue Saturation Values.
+
 ![](https://github.com/fluttercandies/flutter_hsvcolor_picker/blob/master/screenshot/phone.png)
 
 ## Getting Started
   ![](https://github.com/fluttercandies/flutter_hsvcolor_picker/blob/master/screenshot/logo.png)
 
 
-pub: 
-https://pub.dartlang.org/packages/flutter_hsvcolor_picker
-
 ### Installation
 
-
-Download [lib\flutter_hsvcolor_picker.dart] file
-
-or
-
-Add this to your pubspec.yaml (or create it):
-
-```yaml
-dependencies:
-  flutter_hsvcolor_picker: any
-```
-
-Then run the flutter tooling:
-
-```bash
-flutter packages get
-```
-
-Or upgrade the packages with:
-
-```bash
-flutter packages upgrade
-```
+https://pub.dev/packages/flutter_hsvcolor_picker/install
 
 
 ### Example
 
 ```dart
 
-
 import "package:flutter_hsvcolor_picker/flutter_hsvcolor_picker.dart";
 
-
-new ColorPicker(
+ColorPicker(
   color: Colors.blue,
-  onChanged: (value){ }
+  onChanged: (value){ },
+  initialPicker: Picker.paletteHue,
 )
-
-
 ```
 
-
-
+For a more detailed example, head over to: https://github.com/fluttercandies/flutter_hsvcolor_picker/tree/master/example/lib/complex_example
 
 ![](https://github.com/fluttercandies/flutter_hsvcolor_picker/blob/master/screenshot/design.png)
-Details in [example/] folder.
